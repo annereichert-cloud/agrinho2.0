@@ -1,6 +1,7 @@
 (function () {
   const MAX_IMAGE_BYTES = 2_700_000;
   const MAX_IMAGE_DIMENSION = 1800;
+  const API_BASE_URL = window.APP_CONFIG?.apiBaseUrl || '';
 
   function canvasToBlob(canvas, quality) {
     return new Promise((resolve, reject) => {
@@ -46,7 +47,7 @@
 
   async function lerLaudo(imageFile) {
     const imageDataUrl = await prepararImagem(imageFile);
-    const response = await fetch('/api/groq/ler-laudo', {
+    const response = await fetch(`${API_BASE_URL}/api/groq/ler-laudo`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ imageDataUrl })

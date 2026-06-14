@@ -84,6 +84,23 @@ Configuração recomendada:
 - Output Directory: deixe em branco
 - Install Command: `npm install`
 
+## Deploy no GitHub Pages
+
+O GitHub Pages publica só a parte estática. Neste projeto, a interface roda em Pages e a leitura com Groq continua apontando para o backend na Vercel.
+
+Passos:
+
+1. Crie uma branch `gh-pages` ou use o workflow do GitHub Pages.
+2. Publique a pasta raiz do projeto como site estático.
+3. Mantenha `js/config.js` apontando para o backend em produção.
+4. Garanta que o domínio do Pages esteja autorizado no formulário que vai receber o link.
+
+Arquivos já ajustados para Pages:
+
+- caminhos relativos em `index.html` e `pages/*`
+- `manifest.webmanifest` com `start_url` relativo
+- `sw.js` com cache relativo
+
 ## Limitação técnica
 
 O Minhoca Vision é uma ferramenta educativa e de apoio. Ele não substitui um agrônomo, laboratório ou recomendação oficial por cultura e região.

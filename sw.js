@@ -1,19 +1,21 @@
-const CACHE_NAME = 'minhoca-vision-cache-v37';
+const CACHE_NAME = 'minhoca-vision-cache-v38';
 const ASSETS = [
-  '/',
-  '/app',
-  '/pages/creditos',
-  '/css/styles.css',
-  '/js/script.js',
-  '/js/groq-api.js',
-  '/js/app.js',
-  '/manifest.webmanifest',
-  '/pages/offline',
-  '/assets/icone.png',
-  '/assets/logomarca.png',
-  '/prompts/laudo_solo.json',
-  '/prompts/manuais/Fertilidade_Solo_Parana_Resumo_Expandido.md',
-  '/prompts/manuais/Manual_Calagem_Adubacao_Resumo_Expandido.md'
+  './',
+  './index.html',
+  './pages/app.html',
+  './pages/creditos.html',
+  './css/styles.css',
+  './js/script.js',
+  './js/config.js',
+  './js/groq-api.js',
+  './js/app.js',
+  './manifest.webmanifest',
+  './pages/offline.html',
+  './assets/icone.png',
+  './assets/logomarca.png',
+  './prompts/laudo_solo.json',
+  './prompts/manuais/Fertilidade_Solo_Parana_Resumo_Expandido.md',
+  './prompts/manuais/Manual_Calagem_Adubacao_Resumo_Expandido.md'
 ];
 
 self.addEventListener('install', (event) => {
@@ -55,7 +57,7 @@ self.addEventListener('fetch', (event) => {
         .catch(() => {
           const acceptsHtml = event.request.headers.get('accept')?.includes('text/html');
           if (event.request.mode === 'navigate' || acceptsHtml) {
-            return caches.match('/pages/offline') || caches.match('/pages/offline.html');
+            return caches.match('./pages/offline.html');
           }
           return new Response('Recurso indisponivel offline.', {
             status: 503,
