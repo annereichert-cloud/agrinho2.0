@@ -8,7 +8,7 @@ Projeto web PWA criado para o Agrinho 2026 com o tema:
 
 A aplicação em produção está disponível em:
 
-https://agrinho2026-flame-nine.vercel.app/
+https://agrinho2-0-gamma.vercel.app
 
 ## Descrição
 
