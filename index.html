@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#2a7a2e" />
+  <title>Minhoca Vision | Interpretação de laudo de solo</title>
+  <meta name="description" content="Minhoca Vision interpreta laudos laboratoriais de solo e gera explicações simples e recomendações sustentáveis para o produtor rural." />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="icon" href="/assets/icone.png" type="image/png" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div>
+        <a class="logo" href="#home">
+          <img src="assets/logomarca.png" alt="Minhoca Vision" />
+        </a>
+        <p class="tagline">Laudo de solo explicado em linguagem simples.</p>
+      </div>
+      <div class="header-actions">
+        <button id="toggleTheme" aria-label="Alternar modo claro e escuro">Modo escuro</button>
+        <a class="btn" href="/pages/creditos.html">Créditos</a>
+        <a class="btn btn-primary" href="/pages/app.html">Experimentar Agora</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero section container">
+      <div>
+        <p class="eyebrow">Agrinho 2026</p>
+        <h1>Minhoca Vision</h1>
+        <p>Uma ferramenta web para interpretar análise laboratorial de solo, explicar os principais indicadores e sugerir correções quando houver necessidade.</p>
+        <a class="btn btn-primary" href="/pages/app.html">Interpretar laudo</a>
+      </div>
+      <div class="hero-visual">
+        <img src="assets/icone.png" alt="Ícone Minhoca Vision" />
+      </div>
+    </section>
+
+    <section class="section container" aria-labelledby="sobre-title">
+      <h2 id="sobre-title">Sobre o projeto</h2>
+      <div class="grid-2">
+        <div>
+          <p>O produtor tira uma foto do laudo de solo, e o sistema tenta ler automaticamente os valores principais, como pH, P, K, Ca, Mg, Al, CTC, V% e matéria orgânica.</p>
+          <p>Quando a leitura automática não encontra dados suficientes, o app usa OCR como reserva e permite corrigir o texto antes de gerar o parecer.</p>
+          <p>Com base em manuais de fertilidade, calagem e adubação, o sistema mostra um resumo simples e um relatório técnico para apoiar decisões no campo.</p>
+        </div>
+        <div class="card info-card">
+          <p><strong>Autora</strong></p>
+          <p>Anne Gabrieli Morais Reichert</p>
+          <p><strong>Tema</strong></p>
+          <p>Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container bg-light" aria-labelledby="problema-title">
+      <h2 id="problema-title">O problema</h2>
+      <p>Laudos de solo costumam ter muitos números e siglas. Para quem não tem prática, pode ser difícil entender o que precisa de atenção e o que fazer primeiro.</p>
+      <div class="cards-grid">
+        <article class="card">
+          <h3>Acidez</h3>
+          <p>pH baixo e alumínio podem prejudicar raízes e aproveitamento de nutrientes.</p>
+        </article>
+        <article class="card">
+          <h3>Nutrientes</h3>
+          <p>Fósforo, potássio, cálcio e magnésio precisam ser avaliados com cuidado.</p>
+        </article>
+        <article class="card">
+          <h3>Matéria orgânica</h3>
+          <p>Ajuda na estrutura do solo, retenção de água e atividade biológica.</p>
+        </article>
+        <article class="card">
+          <h3>Calagem</h3>
+          <p>A dose depende dos dados do laudo, do PRNT e da recomendação regional.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container" aria-labelledby="solucao-title">
+      <h2 id="solucao-title">Como funciona</h2>
+      <ol class="steps-list">
+        <li>Enviar ou fotografar o laudo</li>
+        <li>Ler automaticamente os valores da imagem com IA</li>
+        <li>Se precisar, aplicar OCR de reserva e permitir revisão do texto</li>
+        <li>Mostra um resumo simples</li>
+        <li>Gera diagnóstico e recomendações se necessário</li>
+        <li>Exibe o relatório técnico em JSON</li>
+      </ol>
+    </section>
+
+    <section class="section container bg-light" aria-labelledby="sustentabilidade-title">
+      <h2 id="sustentabilidade-title">Sustentabilidade</h2>
+      <p>Interpretar o solo ajuda a usar calcário e fertilizantes com mais cuidado, evitando desperdício e melhorando a produtividade com responsabilidade ambiental.</p>
+      <div class="cards-grid">
+        <article class="card">
+          <h3>Uso correto de insumos</h3>
+          <p>Recomendações só aparecem quando os dados indicam necessidade.</p>
+        </article>
+        <article class="card">
+          <h3>Conservação do solo</h3>
+          <p>O sistema valoriza matéria orgânica, cobertura e manejo equilibrado.</p>
+        </article>
+        <article class="card">
+          <h3>Decisão mais clara</h3>
+          <p>O resumo simples ajuda produtores e estudantes a entenderem o laudo.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container" aria-labelledby="tecnologias-title">
+      <h2 id="tecnologias-title">Tecnologias utilizadas</h2>
+      <div class="tech-grid">
+        <div class="tech-card">HTML</div>
+        <div class="tech-card">CSS</div>
+        <div class="tech-card">JavaScript</div>
+        <div class="tech-card">PWA</div>
+        <div class="tech-card">Web App</div>
+      </div>
+    </section>
+
+    <section class="section container bg-light" aria-labelledby="impacto-title">
+      <h2 id="impacto-title">Impacto no campo</h2>
+      <div class="impact-grid">
+        <div>
+          <h3>Menos desperdício</h3>
+          <p>Ajuda a evitar aplicação sem necessidade.</p>
+        </div>
+        <div>
+          <h3>Mais produtividade</h3>
+          <p>Mostra pontos que podem limitar o desenvolvimento das culturas.</p>
+        </div>
+        <div>
+          <h3>Mais sustentabilidade</h3>
+          <p>Apoia o equilíbrio entre produção, solo saudável e meio ambiente.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" aria-labelledby="faq-title">
+      <h2 id="faq-title">FAQ</h2>
+      <div class="faq-item">
+        <h3>A foto é lida automaticamente?</h3>
+        <p>Sim. O app tenta ler automaticamente com IA e, se necessário, usa OCR como reserva. Antes da análise final, você pode revisar e corrigir o texto reconhecido.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Precisa de internet para funcionar?</h3>
+        <p>Sim. Atualmente, a leitura e o processamento do laudo dependem de conexão com a internet.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Substitui um agrônomo?</h3>
+        <p>Não. O sistema ajuda a entender o laudo, mas a recomendação final depende da cultura, da área e da orientação técnica local.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>Anne Gabrieli Morais Reichert | Minhoca Vision</p>
+      <p><a href="/pages/creditos.html">Créditos e transparência</a></p>
+    </div>
+  </footer>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>

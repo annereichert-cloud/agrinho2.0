@@ -1,0 +1,10 @@
+node_modules/
+.DS_Store
+npm-debug.log*
+.env
+.specs/
+coverage/
+dist/
+build/
+.idea/
+edital2026.txt

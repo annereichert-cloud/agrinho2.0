@@ -1,0 +1,7 @@
+node_modules
+.git
+.vercel
+models/**/*.safetensors
+hf_model.json
+transformers_grep.txt
+edital2026.txt

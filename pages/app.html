@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#2a7a2e" />
+  <title>Minhoca Vision App</title>
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="icon" href="/assets/icone.png" type="image/png" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <header class="site-header app-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <img src="/assets/logomarca.png" alt="Minhoca Vision" />
+      </a>
+      <div class="app-header-actions">
+        <div class="user-badge hidden" id="userBadge">
+          <p id="greeting"></p>
+          <p class="small-text" id="userLocation"></p>
+        </div>
+        <a class="btn" href="/pages/creditos.html">Créditos</a>
+        <button id="toggleThemeApp" aria-label="Alternar modo claro e escuro">Modo escuro</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container app-main">
+    <section id="loginSection" class="card login-card">
+      <img class="login-logo" src="/assets/logomarca.png" alt="Minhoca Vision" />
+      <h1>Bem-vinda ao Minhoca Vision</h1>
+      <p>Faça login para acessar a interpretação do laudo de solo.</p>
+      <form id="loginForm">
+        <label for="nameInput">Nome</label>
+        <input id="nameInput" name="name" type="text" placeholder="Seu nome" required />
+        <label for="cityInput">Cidade</label>
+        <input id="cityInput" name="city" type="text" placeholder="Sua cidade" required />
+        <button type="submit" class="btn btn-primary">Entrar</button>
+      </form>
+    </section>
+
+    <section id="dashboardSection" class="hidden">
+      <section class="section card" aria-labelledby="analysis-title">
+        <h2 id="analysis-title">Nova análise</h2>
+        <div class="grid-2">
+          <div>
+            <p class="field-title">Foto do laudo de solo</p>
+            <div class="image-actions">
+              <label class="file-action file-gallery" for="imageInput">Galeria</label>
+              <label class="file-action file-camera" for="cameraInput">Câmera</label>
+            </div>
+            <p id="selectedImageName" class="selected-image-name">Nenhuma imagem escolhida</p>
+            <input id="imageInput" class="hidden-file-input" type="file" accept="image/*" aria-label="Carregar imagem do dispositivo" />
+            <input id="cameraInput" class="hidden-file-input" type="file" accept="image/*" capture="environment" aria-label="Tirar foto do laudo" />
+
+            <label for="soilReportText" class="report-label">Texto reconhecido da foto</label>
+            <textarea id="soilReportText" class="soil-report-input" rows="7" placeholder="Depois de clicar em interpretar, os valores lidos da imagem aparecem aqui. Se a leitura errar algum número, você pode corrigir antes de analisar novamente."></textarea>
+            <p id="ocrStatus" class="form-help">Tire a foto de perto, reta e com boa luz para facilitar a leitura do laudo.</p>
+
+            <label for="cropSelect" class="report-label">Cultura para estimar NPK</label>
+            <select id="cropSelect">
+              <option value="soja">Soja</option>
+              <option value="milho">Milho</option>
+              <option value="trigo">Trigo</option>
+              <option value="feijao">Feijão</option>
+              <option value="geral">Não sei ainda</option>
+            </select>
+            <p class="form-help">A recomendação de NPK depende da cultura. O P também considera o teor de argila, o K considera a CTC e o N considera a matéria orgânica do solo.</p>
+
+          </div>
+
+          <div class="analysis-preview">
+            <p>Tipo de análise:</p>
+            <strong>Laudo laboratorial de solo</strong>
+            <div class="image-preview-box">
+              <span id="imagePreviewText">Imagem escolhida</span>
+              <img id="imagePreview" alt="Imagem enviada para análise" />
+            </div>
+            <div class="progress-bar" aria-hidden="true">
+              <div id="progressFill"></div>
+            </div>
+            <button id="startAnalysis" class="btn btn-primary">Interpretar laudo</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="resultSection" class="section card hidden" aria-labelledby="results-title">
+        <h2 id="results-title">Resultado</h2>
+        <div class="simple-summary">
+          <p>Resumo simples</p>
+          <ul id="simpleSummaryList" class="result-list">
+            <li>Aguardando análise</li>
+          </ul>
+        </div>
+        <div class="image-description">
+          <p>Leitura do laudo</p>
+          <strong id="descriptionText">Aguardando laudo</strong>
+        </div>
+        <div class="npk-summary">
+          <p>Quanto aplicar de N, P e K</p>
+          <ul id="npkSummaryList" class="result-list">
+            <li>Aguardando laudo</li>
+          </ul>
+        </div>
+        <div class="recommendations">
+          <h3>O que precisa ser feito</h3>
+          <ul id="recommendationList"></ul>
+        </div>
+        <details class="detected-elements technical-details">
+          <summary>Ver parâmetros técnicos lidos</summary>
+          <ul id="detectedElementsList"></ul>
+          <div class="result-grid technical-grid">
+            <div>
+              <p>Situação do solo</p>
+              <strong id="diagnosisText">Aguardando análise</strong>
+            </div>
+          </div>
+          <div class="technical-report">
+            <h3>Relatório técnico</h3>
+            <pre id="technicalReportText">Aguardando relatório</pre>
+          </div>
+        </details>
+      </section>
+    </section>
+  </main>
+
+  <script src="/js/script.js"></script>
+  <script src="/js/groq-api.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>

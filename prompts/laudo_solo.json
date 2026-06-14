@@ -1,0 +1,79 @@
+{
+  "nome": "laudo_laboratorial_solo",
+  "idioma": "pt-BR",
+  "objetivo": "Interpretar valores de laudo laboratorial de solo e gerar recomendações práticas de correção e manejo, sem inventar dados ausentes.",
+  "fontes_teoricas": [
+    "prompts/manuais/Fertilidade_Solo_Parana_Resumo_Expandido.md",
+    "prompts/manuais/Manual_Calagem_Adubacao_Resumo_Expandido.md"
+  ],
+  "instrucoes": [
+    "Trate a imagem do laudo como fonte principal dos dados.",
+    "Use OCR ou leitura automática para reconhecer os valores que aparecem na imagem.",
+    "Reconheça laudos em formato de tabela, inclusive quando os cabeçalhos ficam em uma linha e os valores numéricos na linha abaixo.",
+    "Mapeie colunas comuns como pH, SMP, P, K, Ca, Mg, Al, H+Al, CTC, V%, MO, argila, PRNT e NC.",
+    "Mostre uma estimativa numérica de adubação em kg/ha para N, P2O5 e K2O quando houver dados suficientes.",
+    "Informe que a recomendação de NPK depende da cultura escolhida. Explique que o P deve considerar os valores do laudo em conjunto com o teor de argila, o K deve considerar os valores do laudo em conjunto com a CTC e o N deve considerar a matéria orgânica do solo.",
+    "Use somente valores reconhecidos no laudo ou corrigidos no campo de texto reconhecido.",
+    "Não estime pH, nutrientes, CTC, matéria orgânica, SMP ou PRNT sem que esses valores estejam legíveis.",
+    "Quando a foto não permitir leitura suficiente, informe dados insuficientes, peça foto mais clara e não gere recomendação técnica.",
+    "Use linguagem simples no resumo inicial e linguagem técnica no relatório estruturado.",
+    "Gere recomendações somente quando houver problema, alerta ou cálculo aplicável.",
+    "Sempre indique incerteza quando a recomendação depender de cultura, produtividade esperada, método de análise, teor de argila ou tabela regional."
+  ],
+  "parametros_prioritarios": [
+    "pH",
+    "SMP",
+    "Al",
+    "Ca",
+    "Mg",
+    "K",
+    "P",
+    "CTC",
+    "V%",
+    "Matéria orgânica",
+    "Argila",
+    "PRNT",
+    "Necessidade de calcário"
+  ],
+  "base_teorica_resumida": [
+    "A análise de solo é a principal ferramenta para tomada de decisão de correção e adubação.",
+    "Acidez elevada pode causar toxicidade por alumínio, menor crescimento radicular e menor disponibilidade de nutrientes.",
+    "A calagem busca elevar pH, neutralizar alumínio e fornecer cálcio e magnésio.",
+    "A CTC representa a capacidade do solo armazenar nutrientes: CTC = Ca + Mg + K + H + Al.",
+    "A saturação por bases indica o grau de correção química: V% = ((Ca + Mg + K) / CTC) x 100.",
+    "A necessidade de calcário por saturação de bases pode ser estimada por NC = (CTC x (V2 - V1)) / 100, quando V2 for definido para a cultura.",
+    "A dose de calcário deve ser ajustada ao PRNT: NCcorrigida = (NC x 100) / PRNT.",
+    "Fósforo tem baixa mobilidade e a interpretação depende de método, teor de argila e cultura.",
+    "Potássio deve considerar disponibilidade no solo e reposição pela exportação da colheita.",
+    "Matéria orgânica melhora estrutura, CTC, retenção de água e atividade biológica."
+  ],
+  "formato_saida": {
+    "qualidadeImagem": "",
+    "tipoAnalise": "Laudo laboratorial de solo",
+    "parametrosIdentificados": {},
+    "formulasAplicadas": [],
+    "diagnostico": {
+      "descricao": "",
+      "confianca": ""
+    },
+    "problemas": [
+      {
+        "nome": "",
+        "descricao": "",
+        "impactoPotencial": "",
+        "severidade": "",
+        "confianca": ""
+      }
+    ],
+    "recomendacoes": [
+      {
+        "acao": "",
+        "objetivo": "",
+        "beneficio": "",
+        "facilidade": "",
+        "baseManual": ""
+      }
+    ],
+    "resumo": ""
+  }
+}

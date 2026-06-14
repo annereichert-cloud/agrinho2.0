@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#2a7a2e" />
+  <title>Créditos | Minhoca Vision</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="assets/icone.png" type="image/png" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <img src="/assets/logomarca.png" alt="Minhoca Vision" />
+      </a>
+      <div class="header-actions">
+        <button id="toggleTheme" aria-label="Alternar modo claro e escuro">Modo escuro</button>
+        <a class="btn btn-primary" href="/pages/app.html">Abrir app</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container app-main">
+    <section class="section card">
+      <h1>Créditos e transparência</h1>
+      <p>O Minhoca Vision foi criado por Anne Gabrieli Morais Reichert para o Agrinho 2026.</p>
+      <p>O objetivo é ajudar produtores e estudantes a entenderem laudos laboratoriais de solo em linguagem simples, com leitura automática da imagem e revisão humana antes do parecer final.</p>
+    </section>
+
+    <section class="section card">
+      <h2>Base técnica</h2>
+      <p>As recomendações usam conceitos resumidos nos manuais salvos na pasta `prompts/manuais`:</p>
+      <ul>
+        <li>Fertilidade do Solo - Correção e Adubação, resumo expandido baseado em material do SENAR-PR.</li>
+        <li>Manual de Calagem e Adubação RS/SC 2016, resumo técnico expandido.</li>
+      </ul>
+      <p>O sistema usa esses materiais como apoio educativo e combina leitura por IA e OCR para extrair parâmetros do laudo. A recomendação final deve considerar cultura, produtividade esperada, tabela regional e orientação técnica local.</p>
+    </section>
+
+    <section class="section card">
+      <h2>Arquivos visuais</h2>
+      <p>A logomarca e o ícone usados na interface estão na pasta `assets` do projeto.</p>
+    </section>
+
+    <section class="section card">
+      <h2>Tecnologias</h2>
+      <ul>
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>JavaScript Vanilla</li>
+        <li>PWA com Service Worker</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>Minhoca Vision | Agrinho 2026</p>
+      <p><a href="/">Voltar para a página inicial</a></p>
+    </div>
+  </footer>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>

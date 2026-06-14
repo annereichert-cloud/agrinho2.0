@@ -1,0 +1,13 @@
+{
+  "name": "minhoca-vision",
+  "version": "1.0.0",
+  "description": "Servidor Express para Minhoca Vision com leitura de laudos pela Groq e PWA.",
+  "main": "server.js",
+  "scripts": {
+    "build": "node --check js/app.js && node --check js/groq-api.js && node --check js/groq-client.js && node --check api/groq/ler-laudo.js && node --check server.js && node --check sw.js",
+    "start": "node --env-file=.env server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
