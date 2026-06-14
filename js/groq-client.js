@@ -3,6 +3,7 @@ const GROQ_VISION_MODEL = process.env.GROQ_VISION_MODEL || 'meta-llama/llama-4-s
 
 const EXTRACTION_PROMPT = [
   'Leia esta imagem de um laudo laboratorial de solo brasileiro.',
+  'Extraia TODO o texto da imagem. Mantenha a formatacao original. Nao resuma. Se houver tabelas, reproduza em Markdown.',
   'Extraia somente valores que estejam visiveis. Nao invente nem estime valores.',
   'Identifique também o estado brasileiro de origem do laudo usando laboratório, endereço, município, cabeçalho, logotipo ou texto visível.',
   'Não deduza o estado apenas por aparência. Quando não houver evidência suficiente, use null.',
